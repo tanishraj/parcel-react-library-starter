@@ -5,10 +5,12 @@ export type ButtonProps = {
   variant?: "primary" | "secondary";
 };
 
+const VariantStyles = {
+  primary: "bg-red-300",
+  secondary: "bg-blue-300",
+};
+
 export const Button: FC<ButtonProps> = ({ children, variant }) => {
-  return (
-    <button style={{ backgroundColor: variant === "primary" ? "red" : "blue" }}>
-      {children}
-    </button>
-  );
+  const variantClassName = VariantStyles[variant || "primary"];
+  return <button className={variantClassName}>{children}</button>;
 };
