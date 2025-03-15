@@ -1,6 +1,6 @@
 {
   "name": "parcel-react-library-boilerplate",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "Boilerplate for creating React component libraries, bundled with Parcel.js to ESM and/or CJS Modules, Storybook, Typescript",
   "author": "Tanishraj",
   "license": "MIT",
@@ -8,7 +8,9 @@
   "main": "dist/index.js",
   "module": "dist/module.js",
   "types": "dist/types.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "parcel build"
   },
