@@ -1,5 +1,5 @@
 {
-  "name": "parcel-react-library-boilerplate",
+  "name": "parcel-react-library-starter",
   "version": "1.0.0",
   "description": "Boilerplate for creating React component libraries, bundled with Parcel.js to ESM and/or CJS Modules, Storybook, Typescript",
   "author": "Tanishraj",
