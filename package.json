@@ -1,18 +1,18 @@
 {
   "name": "parcel-react-library-starter",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Boilerplate for creating React component libraries, bundled with Parcel.js to ESM and/or CJS Modules, Storybook, Typescript",
   "author": "Tanishraj",
   "license": "MIT",
   "source": "src/index.ts",
-  "main": "dist/index.js",
   "module": "dist/module.js",
   "types": "dist/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "parcel build"
+    "build": "parcel build",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "react": "^19.0.0",
