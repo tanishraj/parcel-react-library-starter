@@ -1,6 +1,6 @@
 // TAILWIND CSS IMPORT
-import "./tailwind.css";
+import './tailwind.css';
 
 // EXPORT LIBRARY COMPONENTS
-export * from "./components";
-export * from "./hooks";
+export * from './components';
+export * from './hooks';

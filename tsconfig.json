@@ -1,5 +1,5 @@
 {
-  "compilerOptions": {    
+  "compilerOptions": {
     // TYPE CHECKING
     "strict": true,
     "allowUnreachableCode": false,
@@ -23,9 +23,7 @@
     "resolveJsonModule": true,
     "baseUrl": "./src",
     "paths": {
-      "*": [
-        "*",
-      ]
+      "*": ["*"]
     },
 
     // JAVASCRIPT SUPORT
@@ -36,9 +34,9 @@
     "types": [],
     "noEmit": true,
     "removeComments": true,
-    "sourceMap":true,
+    "sourceMap": true,
     "outDir": "dist",
-  
+
     // EDITOR SUPPORT
     "disableSizeLimit": false,
     "plugins": [],
@@ -54,8 +52,7 @@
     "lib": ["DOM", "ES6"],
 
     // COMPLETENESS
-    "skipLibCheck": true,
-
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["dist", "node_modules"]
