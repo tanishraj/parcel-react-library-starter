@@ -54,6 +54,6 @@
     // COMPLETENESS
     "skipLibCheck": true
   },
-  "include": ["src", "eslint.config.mjs", "*.config.ts"],
+  "include": ["src", "*.d.ts", "eslint.config.mjs", "*.config.ts"],
   "exclude": ["dist", "node_modules"]
 }
