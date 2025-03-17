@@ -14,7 +14,7 @@ import pluginStorybook from 'eslint-plugin-storybook';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { ignores: ['node_modules', 'dist'] },
-  { files: ['**/*.{js,ts,jsx,tsx}'] },
+  { files: ['**/*.{js,ts,mjs,cjs,jsx,tsx}'] },
   {
     languageOptions: {
       ecmaVersion: 2020,
@@ -24,11 +24,28 @@ export default [
         project: ['./tsconfig.json'],
       },
     },
-    settings: { react: { version: 'detect' } },
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   configPrettier,
+
+  {
+    name: 'Typescript',
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-misused-promises': 'off',
+      '@typescript-eslint/unbound-method': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-use-before-define': [
+        'error',
+        { functions: false },
+      ],
+    },
+  },
 
   {
     name: 'React',
@@ -39,6 +56,7 @@ export default [
       'react-perf': pluginReactPerf,
       'jsx-a11y': pluginJsxA11y,
     },
+    settings: { react: { version: 'detect' } },
     rules: {
       ...pluginReact.configs.recommended.rules,
       ...pluginReactHooks.configs.recommended.rules,
