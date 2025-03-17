@@ -6,8 +6,10 @@ import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginReactRefresh from 'eslint-plugin-react-refresh';
 import pluginReactPerf from 'eslint-plugin-react-perf';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import pluginImport from 'eslint-plugin-import';
 import pluginPrettier from 'eslint-plugin-prettier';
 import configPrettier from 'eslint-config-prettier';
+import pluginStorybook from 'eslint-plugin-storybook';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -67,6 +69,63 @@ export default [
           aspects: ['invalidHref'],
         },
       ],
+    },
+  },
+
+  {
+    name: 'Import Order',
+    plugins: {
+      import: pluginImport,
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {},
+      },
+    },
+    rules: {
+      ...pluginImport.configs.recommended.rules,
+
+      'import/no-duplicates': 'error',
+      'import/no-self-import': 'error',
+      'import/order': [
+        'error',
+        {
+          'newlines-between': 'always',
+          pathGroups: [
+            {
+              pattern: '$/**',
+              group: 'internal',
+            },
+          ],
+          pathGroupsExcludedImportTypes: ['builtin'],
+          groups: [
+            ['builtin', 'external'],
+            ['internal'],
+            ['parent', 'sibling', 'index'],
+            'unknown',
+          ],
+        },
+      ],
+      'import/no-cycle': [
+        'error',
+        {
+          maxDepth: '∞',
+          ignoreExternal: true,
+        },
+      ],
+    },
+  },
+
+  {
+    name: 'Storybook',
+    files: ['**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
+    plugins: {
+      storybook: pluginStorybook,
+    },
+    rules: {
+      ...pluginStorybook.configs.recommended.rules,
+      'storybook/hierarchy-separator': 'error',
+      'storybook/default-exports': 'off',
     },
   },
 
