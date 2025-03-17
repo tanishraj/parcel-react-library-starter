@@ -15,8 +15,22 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
   configPrettier,
+
+  {
+    name: 'React',
+    plugins: {
+      react: pluginReact,
+    },
+    rules: {
+      ...pluginReact.configs.recommended.rules,
+      'react/jsx-no-duplicate-props': ['error', { ignoreCase: true }],
+      'react/no-array-index-key': 'warn',
+      'react/no-danger': 'warn',
+      'react/no-deprecated': 'error',
+      'react/no-direct-mutation-state': 'error',
+    },
+  },
 
   {
     name: 'ESLint + Prettier',
