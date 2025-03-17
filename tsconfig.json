@@ -21,9 +21,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "*": ["*"]
+      "@/*": ["./src/*"]
     },
 
     // JAVASCRIPT SUPORT
@@ -54,6 +54,6 @@
     // COMPLETENESS
     "skipLibCheck": true
   },
-  "include": ["src"],
+  "include": ["src", "eslint.config.mjs"],
   "exclude": ["dist", "node_modules"]
 }
