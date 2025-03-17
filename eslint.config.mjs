@@ -9,7 +9,10 @@ import configPrettier from 'eslint-config-prettier';
 export default [
   { ignores: ['node_modules', 'dist'] },
   { files: ['**/*.{js,ts,jsx,tsx}'] },
-  { languageOptions: { globals: globals.browser } },
+  {
+    languageOptions: { globals: globals.browser },
+    settings: { react: { version: 'detect' } },
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
