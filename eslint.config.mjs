@@ -14,7 +14,14 @@ export default [
   { ignores: ['node_modules', 'dist'] },
   { files: ['**/*.{js,ts,jsx,tsx}'] },
   {
-    languageOptions: { globals: globals.browser },
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parser: tseslint.parser,
+      parserOptions: {
+        project: ['./tsconfig.json'],
+      },
+    },
     settings: { react: { version: 'detect' } },
   },
   pluginJs.configs.recommended,
