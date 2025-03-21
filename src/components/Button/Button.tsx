@@ -6,8 +6,8 @@ export type ButtonProps = {
 };
 
 const VariantStyles = {
-  primary: 'bg-red-300',
-  secondary: 'bg-blue-300',
+  primary: 'bg-red-300 dark:bg-red-600',
+  secondary: 'bg-blue-300 dark:bg-blue-600',
 };
 
 export const Button: FC<ButtonProps> = ({ children, variant }) => {

@@ -18,16 +18,27 @@
     "lint:fix": "eslint . --fix && prettier --write .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean": "rm -rf dist node_modules yarn.lock .parcel-cache"
+    "clean": "rm -rf dist node_modules yarn.lock .parcel-cache",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3",
     "@eslint/js": "^9.22.0",
     "@parcel/packager-ts": "2.13.3",
     "@parcel/transformer-typescript-types": "2.13.3",
+    "@storybook/addon-essentials": "^8.6.7",
+    "@storybook/addon-onboarding": "^8.6.7",
+    "@storybook/addon-themes": "^8.6.7",
+    "@storybook/blocks": "^8.6.7",
+    "@storybook/experimental-addon-test": "^8.6.7",
+    "@storybook/react": "^8.6.7",
+    "@storybook/react-vite": "^8.6.7",
+    "@storybook/test": "^8.6.7",
     "@tailwindcss/postcss": "^4.0.14",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
@@ -47,6 +58,7 @@
     "parcel": "^2.13.3",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
+    "storybook": "^8.6.7",
     "tailwindcss": "^4.0.14",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.1",
