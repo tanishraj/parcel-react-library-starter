@@ -56,10 +56,18 @@
   },
   "include": [
     "src",
+    "*.ts",
     "*.d.ts",
     "*.config.mjs",
     "*.config.ts",
     ".storybook/*.ts"
   ],
-  "exclude": ["dist", "node_modules"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "*.stories.ts",
+    "*.stories.tsx",
+    "*.test.ts",
+    "*.test.tsx"
+  ]
 }
