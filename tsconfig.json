@@ -54,6 +54,12 @@
     // COMPLETENESS
     "skipLibCheck": true
   },
-  "include": ["src", "*.d.ts", "*.config.mjs", "*.config.ts"],
-  "exclude": ["dist", "node_modules", ".storybook/*.ts"]
+  "include": [
+    "src",
+    "*.d.ts",
+    "*.config.mjs",
+    "*.config.ts",
+    ".storybook/*.ts"
+  ],
+  "exclude": ["dist", "node_modules"]
 }
