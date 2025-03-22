@@ -5,14 +5,21 @@ import { Button, ButtonProps } from './Button';
 const meta: Meta<ButtonProps> = {
   title: 'Components/Button',
   component: Button,
-  args: {
-    children: 'Click me',
-  },
   argTypes: {
     variant: {
-      options: ['primary', 'secondary'],
+      options: [
+        'primary',
+        'secondary',
+        'outline',
+        'destructive',
+        'ghost',
+        'link',
+      ],
       control: { type: 'select' },
     },
+  },
+  args: {
+    children: 'Click me',
   },
 };
 
@@ -23,4 +30,5 @@ export const Default: Story = {
   args: {
     variant: 'primary',
   },
+  render: args => <Button {...args} />,
 };
