@@ -69,6 +69,8 @@ export default [
       'react/no-danger': 'warn',
       'react/no-deprecated': 'error',
       'react/no-direct-mutation-state': 'error',
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-uses-react': 'off',
 
       'react-refresh/only-export-components': [
         'warn',

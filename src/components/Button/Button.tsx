@@ -1,16 +1,26 @@
-import React, { FC } from 'react';
+import { forwardRef } from 'react';
+import { type VariantProps } from 'class-variance-authority';
 
-export type ButtonProps = {
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary';
-};
+import { cn } from '../../utils';
+import { buttonVariants } from './Button.styles';
 
-const VariantStyles = {
-  primary: 'bg-red-300 dark:bg-red-600',
-  secondary: 'bg-blue-300 dark:bg-blue-600',
-};
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
 
-export const Button: FC<ButtonProps> = ({ children, variant }) => {
-  const variantClassName = VariantStyles[variant || 'primary'];
-  return <button className={variantClassName}>{children}</button>;
-};
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, ...props }, ref) => {
+    return (
+      <button
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+Button.displayName = 'Button';
+
+export { Button };
