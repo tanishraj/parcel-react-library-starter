@@ -1,7 +1,7 @@
 {
-  "name": "parcel-react-library-starter",
+  "name": "vite-react-library-starter",
   "version": "1.0.6",
-  "description": "Boilerplate for creating React component libraries, bundled with Parcel.js to ESM and/or CJS Modules, Storybook, Typescript",
+  "description": "Boilerplate for creating React component libraries, bundled with vite js to ESM and/or CJS Modules, Storybook, Typescript",
   "author": "Tanishraj",
   "license": "MIT",
   "main": "dist/index.js",
@@ -12,9 +12,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && parcel build",
+    "build": "rm -rf dist && vite build",
     "prepublishOnly": "npm run build",
-    "build:vite": "rm -rf dist && vite build",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
@@ -22,9 +21,9 @@
     "lint:fix": "eslint . --fix && prettier --write .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean": "rm -rf dist node_modules .parcel-cache coverage",
+    "clean": "rm -rf dist node_modules coverage storybook-static",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -36,8 +35,6 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^3",
     "@eslint/js": "^9.22.0",
-    "@parcel/packager-ts": "2.14.1",
-    "@parcel/transformer-typescript-types": "2.14.1",
     "@storybook/addon-essentials": "^8.6.7",
     "@storybook/addon-onboarding": "^8.6.7",
     "@storybook/addon-themes": "^8.6.7",
@@ -66,7 +63,6 @@
     "eslint-plugin-storybook": "^0.11.6",
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
-    "parcel": "^2.14.1",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "storybook": "^8.6.7",
