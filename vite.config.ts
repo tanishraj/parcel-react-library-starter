@@ -16,4 +16,15 @@ export default defineConfig({
     globals: true,
     setupFiles: './setupTests.ts',
   },
+  build: {
+    outDir: 'dist',
+    cssMinify: true,
+    sourcemap: true,
+    lib: {
+      entry: 'src/index.ts',
+      name: 'Parcel React Library Starter',
+      formats: ['es', 'cjs'],
+      fileName: format => `index.${format}.js`,
+    },
+  },
 }) satisfies UserConfig;
