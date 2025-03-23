@@ -1,6 +1,6 @@
 {
   "name": "vite-react-library-starter",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Boilerplate for creating React component libraries, bundled with vite js to ESM and/or CJS Modules, Storybook, Typescript",
   "author": "Tanishraj",
   "license": "MIT",
