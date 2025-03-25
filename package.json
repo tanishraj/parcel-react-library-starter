@@ -7,7 +7,6 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/types.d.ts",
-  "style": "dist/index.css",
   "files": [
     "dist"
   ],
