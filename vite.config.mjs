@@ -1,8 +1,10 @@
 /// <reference types="vitest" />
-import { defineConfig, type UserConfig } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import dts from 'vite-plugin-dts';
+import tailwindcss from '@tailwindcss/vite';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,6 +12,10 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
     dts({ rollupTypes: true, tsconfigPath: './tsconfig.json' }),
+    tailwindcss({
+      injectInto: 'css-in-js',
+    }),
+    cssInjectedByJsPlugin(),
   ],
   server: {
     port: 3000,
@@ -26,7 +32,7 @@ export default defineConfig({
     cssMinify: true,
     sourcemap: true,
     minify: 'terser',
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     reportCompressedSize: false,
     terserOptions: {
       compress: {
@@ -41,4 +47,4 @@ export default defineConfig({
       fileName: format => `index.${format}.js`,
     },
   },
-}) satisfies UserConfig;
+});
