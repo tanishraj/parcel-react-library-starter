@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 
 import { cn } from '../../utils';
+
 import 'react-day-picker/style.css';
 
 // Define variants using CVA
@@ -26,7 +28,7 @@ const datePickerVariants = cva('bg-white rounded-md shadow-lg p-1', {
 });
 
 export interface DateRange {
-  from?: Date;
+  from: Date;
   to?: Date;
 }
 
@@ -168,34 +170,3 @@ export const DatePicker = ({
     </div>
   );
 };
-
-// Simple icons for navigation
-const ChevronLeftIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns='http://www.w3.org/2000/svg'
-    className={className}
-    viewBox='0 0 20 20'
-    fill='currentColor'
-  >
-    <path
-      fillRule='evenodd'
-      d='M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z'
-      clipRule='evenodd'
-    />
-  </svg>
-);
-
-const ChevronRightIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns='http://www.w3.org/2000/svg'
-    className={className}
-    viewBox='0 0 20 20'
-    fill='currentColor'
-  >
-    <path
-      fillRule='evenodd'
-      d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
-      clipRule='evenodd'
-    />
-  </svg>
-);
